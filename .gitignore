@@ -1,0 +1,5 @@
+/node_modules/
+/dist/
+
+/src/client/node_modules/
+/src/client/public/build/
