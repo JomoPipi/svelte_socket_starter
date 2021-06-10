@@ -4,7 +4,6 @@ import path from "path"
 const app = express()
 import { fileURLToPath } from 'url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const clientPath = path.join('src', 'client', 'public', 'index.html')
 const staticPath = path.join(__dirname, '..', '..', 'src', 'client', 'public')
 
 app.use(express.static(staticPath))
