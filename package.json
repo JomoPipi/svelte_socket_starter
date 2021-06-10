@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev-server": "npx nodemon dist/server/main.js",
     "dev-client": ""
   },
@@ -23,9 +23,14 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.14.5",
     "@tsconfig/svelte": "^2.0.1",
     "@types/express": "^4.17.12",
     "@types/node": "^15.12.2",
+    "@typescript-eslint/eslint-plugin": "^4.26.1",
+    "@typescript-eslint/parser": "^4.26.1",
+    "jest": "^27.0.4",
+    "prettier": "2.3.1",
     "svelte-check": "^2.1.0",
     "svelte-preprocess": "^4.7.3",
     "ts-node": "^10.0.0",
