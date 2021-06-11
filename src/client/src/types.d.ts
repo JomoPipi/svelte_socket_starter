@@ -1,0 +1,8 @@
+
+
+
+
+
+
+
+declare function io() : Socket

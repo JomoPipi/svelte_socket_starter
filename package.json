@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/JomoPipi/BLOOD_BLAZE#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "socket.io": "^4.1.2"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.14.5",
