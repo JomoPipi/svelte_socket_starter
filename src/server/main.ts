@@ -13,7 +13,8 @@ const staticPath = path.join(__dirname, '..', '..', 'src', 'client', 'public')
 
 app.use(express.static(staticPath))
 
-app.get('/', (req, res) => res.send(path.join(staticPath, 'index.html')))
+// Might not really need this: 
+// app.get('/', (req, res) => res.send(path.join(staticPath, 'index.html')))
 
 io.on('connection', (socket) => {
     console.log('a user connected');
@@ -21,6 +22,7 @@ io.on('connection', (socket) => {
         console.log('user disconnected');
     });
 
+    // Create a new player, maybe?
     socket.on('chat message', data => console.log('data =', data))
 });
 
