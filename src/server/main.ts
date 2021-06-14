@@ -15,17 +15,17 @@ app.use(express.static(staticPath))
 
 // Might not really need this: 
 // app.get('/', (req, res) => res.send(path.join(staticPath, 'index.html')))
-
+type X = MySocket
 io.on('connection', (socket) => {
     console.log('a user connected');
     socket.on('disconnect', () => {
-        console.log('user disconnected');
+        console.log('a user disconnected');
     });
 
     // Create a new player, maybe?
     socket.on('chat message', data => console.log('data =', data))
 });
 
-server.listen(80, () => console.log('SERVER IS LISTENING!!'))
+server.listen(3000, () => console.log('SERVER IS LISTENING!'))
 
 export {}

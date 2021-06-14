@@ -1,0 +1,3 @@
+enum SocketTypes {
+  nomination = 'nomination'
+}
