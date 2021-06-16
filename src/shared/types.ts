@@ -2,11 +2,13 @@
 type ServerToClientSocketEvents = keyof ServerToClientMessageTypes
 type ServerToClientMessageTypes = {
   nameApprovalDecision : boolean
+  renderData : RenderData
 }
 
 type ClientToServerSocketEvents = keyof ClientToServerMessageTypes
 type ClientToServerMessageTypes = {
-  nomination : { server : string, client : boolean }
+  nomination : string
+  controlsInput : ControlsInput
 }
 
 interface ServerSocket {
@@ -30,3 +32,12 @@ interface ClientSocket {
   emit <T extends ClientToServerSocketEvents>
     (event : T, data : ClientToServerMessageTypes[T]) : void
 }
+
+type Joystick = { x : number, y : number, active : boolean }
+type ControlsInput = {
+  leftJoystick : Joystick,
+  rightJoyStick : Joystick
+  isReloading : boolean
+}
+
+type RenderData = any // TODO

@@ -25,6 +25,6 @@ io.on('connection', (_socket) => {
     socket.on('nomination', data => console.log('data =', data))
 });
 
-server.listen(80, () => console.log('SERVER IS LISTENING!'))
+server.listen(8080, () => console.log('SERVER IS LISTENING!'))
 
 export {}
