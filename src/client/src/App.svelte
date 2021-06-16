@@ -3,6 +3,8 @@
 
 	export let name : string
 
+	type X = MySocket
+
 	const socket = io() as MySocket
 
 	console.log(' io =',io)

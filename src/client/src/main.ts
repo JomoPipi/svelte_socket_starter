@@ -7,6 +7,4 @@ const app = new App({
 	}
 });
 
-// type X = MySocket
-
 export default app;

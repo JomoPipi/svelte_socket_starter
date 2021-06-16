@@ -30,6 +30,6 @@ io.on('connection', (_socket) => {
     socket.on('nomination', data => console.log('data =', data))
 });
 
-server.listen(3000, () => console.log('SERVER IS LISTENING!'))
+server.listen(80, () => console.log('SERVER IS LISTENING!'))
 
 export {}
