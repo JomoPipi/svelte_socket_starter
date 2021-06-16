@@ -1,6 +1,6 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
-  "include": ["src/server/**/*", "src/shared/constants.ts", "src/shared/types.ts"],
+  "include": ["src/server/**/*", "src/shared/**/*"],
   "exclude": ["node_modules/*", "public/*"],
   "ts-node": {
     "files": true
