@@ -3,7 +3,7 @@
 
 	export let name : string
 
-	const socket = io()
+	const socket = io() as MySocket
 
 	console.log(' io =',io)
 
@@ -13,7 +13,7 @@
 		if (input.value)
 		{
 			console.log('input =', input.value)
-			socket.emit('chat message', input.value)
+			socket.emit('nomination', input.value)
 			input.value = ''
 		}
 	}

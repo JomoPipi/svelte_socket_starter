@@ -1,13 +1,12 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
 
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "../shared/**/*"],
   "exclude": ["node_modules/*", "__sapper__/*", "public/*"],
-  
   "compilerOptions": {
     "target": "ESNEXT",
-    "module": "ES2020","outDir": "dist",
-    "rootDir": "src",
+    "module": "ES2020",
+    "outDir": "dist",
     "strict": true, 
     "noUncheckedIndexedAccess": true,            
     "noImplicitOverride": true, 

@@ -8,8 +8,8 @@ type SocketEventEmissionData = {
 type SocketEventDestination = 'server' | 'client'
 
 interface MySocket {
-  on <T extends SocketEvents, U extends SocketEventDestination>
-    (event : T, destination : U, fn : (x : SocketEventEmissionData[T][U]) => void) : void
+  on <T extends SocketEvents>
+    (event : T, fn : (x : any) => void) : void
 
   once <T extends SocketEvents, U extends SocketEventDestination>
     (event : T, fn : (x : SocketEventEmissionData[T][U]) => void) : void

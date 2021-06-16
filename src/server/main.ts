@@ -11,19 +11,23 @@ const io = new Server(server);
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const staticPath = path.join(__dirname, '..', '..', 'src', 'client', 'public')
 
+let f : MySocket = {} as any
+
 app.use(express.static(staticPath))
 
 // Might not really need this: 
 // app.get('/', (req, res) => res.send(path.join(staticPath, 'index.html')))
-type X = MySocket
-io.on('connection', (socket) => {
-    console.log('a user connected');
-    socket.on('disconnect', () => {
+
+io.on('connection', (_socket) => {
+    _socket.on('disconnect', () => {
         console.log('a user disconnected');
     });
 
+    const socket = _socket as MySocket
+    console.log('a user connected');
+    
     // Create a new player, maybe?
-    socket.on('chat message', data => console.log('data =', data))
+    socket.on('nomination', data => console.log('data =', data))
 });
 
 server.listen(3000, () => console.log('SERVER IS LISTENING!'))

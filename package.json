@@ -19,9 +19,9 @@
       "coverage/"
     ],
     "watch": [
-      "src/"
+      "src/server/"
     ],
-    "exec": "node --loader ts-node/esm src/server/main.ts",
+    "exec": "node --loader ts-node/esm src/server/main.ts --emit",
     "env": {
       "NODE_ENV": "development"
     },
