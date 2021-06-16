@@ -3,7 +3,7 @@
 
 	export let name : string
 
-	const socket = io() as MySocket
+	const socket = io() as ClientSocket
 
 	console.log(' io =',io)
 

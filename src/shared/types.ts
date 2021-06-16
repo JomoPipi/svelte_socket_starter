@@ -1,19 +1,32 @@
 
-type SocketEvents = keyof SocketEventEmissionData
+type ServerToClientSocketEvents = keyof ServerToClientMessageTypes
+type ServerToClientMessageTypes = {
+  nameApprovalDecision : boolean
+}
 
-type SocketEventEmissionData = {
+type ClientToServerSocketEvents = keyof ClientToServerMessageTypes
+type ClientToServerMessageTypes = {
   nomination : { server : string, client : boolean }
 }
 
-type SocketEventDestination = 'server' | 'client'
+interface ServerSocket {
+  on <T extends ClientToServerSocketEvents>
+    (event : T, fn : (x : ClientToServerMessageTypes[T]) => void) : void
 
-interface MySocket {
-  on <T extends SocketEvents>
-    (event : T, fn : (x : any) => void) : void
+  once <T extends ClientToServerSocketEvents>
+    (event : T, fn : (x : ClientToServerMessageTypes[T]) => void) : void
 
-  once <T extends SocketEvents, U extends SocketEventDestination>
-    (event : T, fn : (x : SocketEventEmissionData[T][U]) => void) : void
+  emit <T extends ServerToClientSocketEvents>
+    (event : T, data : ServerToClientMessageTypes[T]) : void
+}
 
-  emit <T extends SocketEvents, U extends SocketEventDestination>
-    (event : T, data : SocketEventEmissionData[T][U]) : void
+interface ClientSocket {
+  on <T extends ServerToClientSocketEvents>
+    (event : T, fn : (x : ServerToClientMessageTypes[T]) => void) : void
+
+  once <T extends ServerToClientSocketEvents>
+    (event : T, fn : (x : ServerToClientMessageTypes[T]) => void) : void
+
+  emit <T extends ClientToServerSocketEvents>
+    (event : T, data : ClientToServerMessageTypes[T]) : void
 }
