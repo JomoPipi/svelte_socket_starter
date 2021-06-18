@@ -1,6 +1,6 @@
 
 
-const poop = { a : 4, b : 5, c : 'Hello, World!' } as const
+const poop = { a : 69, b : 420, c : 'Hello, World!' } as const
 
 {
     const isBrowser = typeof window !== 'undefined' && typeof window.document !== 'undefined';

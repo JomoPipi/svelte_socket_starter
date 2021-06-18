@@ -15,7 +15,7 @@ const staticPath = path.join(__dirname, '..', '..')// 'public')
 
 app.use(express.static(staticPath))
 // app.use(express.static(path.join(__dirname, '..', '..', 'dist', 'shared')))
-console.log('server poop =', poop)
+console.log('server poop ===', poop)
 io.on('connection', (_socket) => {
     _socket.on('disconnect', () => {
         console.log('a user disconnected');

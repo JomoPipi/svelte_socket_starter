@@ -6,7 +6,6 @@
   "compilerOptions": {
     "target": "ESNEXT",
     "module": "ES2020",
-    "outDir": "dist",
     "strict": true, 
     "noUncheckedIndexedAccess": true,            
     "noImplicitOverride": true, 

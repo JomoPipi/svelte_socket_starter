@@ -609,7 +609,7 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("App", slots, []);
     	let { name } = $$props;
-    	console.log("client poop =", poop);
+    	console.log("client poop ===", poop);
     	const writable_props = ["name"];
 
     	Object.keys($$props).forEach(key => {
@@ -665,7 +665,7 @@ var app = (function () {
     const app = new App({
         target: document.body,
         props: {
-            name: 'Bllllaze'
+            name: 'Blaze'
         }
     });
 
