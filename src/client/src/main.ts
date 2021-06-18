@@ -5,6 +5,6 @@ const app = new App({
 	props: {
 		name: 'Blaze'
 	}
-});
+})
 
 export default app;

@@ -4,18 +4,22 @@ import http from 'http'
 import { fileURLToPath } from 'url'
 import { Server } from "../../node_modules/socket.io/dist/index.js" // "socket.io"
 import '../shared/constants.js'
+import { Game } from './game/game.js'
 
 
 const app = express()
 const server = http.createServer(app)
 const io = new Server(server);
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-// const staticPath = path.join(__dirname, '..', '..', 'src', 'client', 'public')
-const staticPath = path.join(__dirname, '..', '..')// 'public')
+
+const staticPath = path.join(__dirname, '..', '..')
 
 app.use(express.static(staticPath))
-// app.use(express.static(path.join(__dirname, '..', '..', 'dist', 'shared')))
+
 console.log('server poop ===', poop)
+
+const game = new Game()
+
 io.on('connection', (_socket) => {
     _socket.on('disconnect', () => {
         console.log('a user disconnected');
@@ -25,11 +29,20 @@ io.on('connection', (_socket) => {
     console.log('a user connected');
 
     // Create a new player, maybe?
-    socket.on('nomination', data => console.log('data =', data))
+    socket.on('nomination', name => {
+        if (game.addPlayer(name))
+        {
+            console.log('added player',name)
+        }
+        else
+        {
+            console.log('player already exists:',name)
+        }
+    })
 });
 
-server.listen(8080, () => console.log('SERVER IS LISTENING!'))
 
-// console.log('p =',poop)
+
+server.listen(8080, () => console.log('SERVER IS LISTENING!'))
 
 export {}

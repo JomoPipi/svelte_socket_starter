@@ -4,17 +4,24 @@
 	export let name : string
 
 	const socket = io() as ClientSocket
-	console.log(' io =',io)
 
 	function sendChatMessage(e : Event) {
 		e.preventDefault()
-		const input = (e.target as any).children[0] as HTMLInputElement
+		const input = 
+			(e.target as HTMLElement)
+			.children[0] as HTMLInputElement
+
 		if (input.value)
 		{
-			console.log('input =', input.value)
 			socket.emit('nomination', input.value)
 			input.value = ''
 		}
+	}
+
+	function sanitizeText(event : any) {
+		setTimeout(() =>
+			event.target.value = 
+			event.target.value.replace(/[^A-Za-z0-9 _]/g, ''))
 	}
 
 </script>
@@ -27,7 +34,10 @@
 	<div>
 		<span class="inner">
 			<form type="text" action="" on:submit={sendChatMessage}>
-				<input autocomplete="off" placeholder="Enter your name" /><button>GO</button>
+				<input autocomplete="off" 
+					placeholder="Enter your name" 
+					pattern="[A-Za-z0-9 _]*" on:keypress={sanitizeText}/>
+				<button> GO </button>
 			</form>
 		<span/>
 	</div>
@@ -91,6 +101,7 @@
 	button {
 		border-radius: 5px;
 		background: radial-gradient(rgb(85, 72, 0),rgb(29, 0, 0));
+		color: rgb(252, 246, 82);
 	}
 	bloodblaze {
 		z-index: -1;
