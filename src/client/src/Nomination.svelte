@@ -3,7 +3,7 @@
 
 	export let name : string
 
-	const socket = io() as ClientSocket
+	const socket = io()
 
 	function sendChatMessage(e : Event) {
 		e.preventDefault()

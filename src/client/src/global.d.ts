@@ -1,3 +1,3 @@
 /// <reference types="svelte" />
 
-declare function io() : Socket
+declare function io() : ClientSocket

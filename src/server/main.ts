@@ -43,6 +43,6 @@ io.on('connection', (_socket) => {
 
 
 
-server.listen(8080, () => console.log('SERVER IS LISTENING!'))
+server.listen(80, () => console.log('SERVER IS LISTENING!'))
 
 export {}
