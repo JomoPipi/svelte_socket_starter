@@ -1,9 +1,9 @@
 
 
-const poop = { a : 4, b : 5 } as const
+const poop = { a : 4, b : 5, c : 'Hello, World!' } as const
 
-// {
-//     const g = global as any
-
-//     g.poop = poop
-// }
+{
+    const isBrowser = typeof window !== 'undefined' && typeof window.document !== 'undefined';
+    const _ = isBrowser ? window : global as any
+    _.poop = poop
+}
