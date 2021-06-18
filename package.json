@@ -1,10 +1,10 @@
 {
-  "name": "blood_blaze",
+  "name": "svelte_socket_starter",
   "version": "1.0.0",
-  "description": "DEVASTATING BLOOD DEATH EXTREME",
   "type": "module",
   "scripts": {
     "test": "jest",
+    "setup": "npm install && cd src/client && npm install && cd ../..",
     "dev-client": "cd src/client && npx rollup -c -w",
     "dev-server": "concurrently npm:dev-server:*",
     "dev-server:compile": "tsc -w",
@@ -27,16 +27,6 @@
     },
     "ext": "js,json,ts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JomoPipi/BLOOD_BLAZE.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JomoPipi/BLOOD_BLAZE/issues"
-  },
-  "homepage": "https://github.com/JomoPipi/BLOOD_BLAZE#readme",
   "dependencies": {
     "express": "^4.17.1",
     "socket.io": "^4.1.2"

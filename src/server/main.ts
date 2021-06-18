@@ -16,7 +16,7 @@ const staticPath = path.join(__dirname, '..', '..')
 
 app.use(express.static(staticPath))
 
-console.log('server poop ===', poop)
+console.log('server shared data ===', MySharedDataConstant)
 
 const game = new Game()
 
@@ -43,6 +43,6 @@ io.on('connection', (_socket) => {
 
 
 
-server.listen(80, () => console.log('SERVER IS LISTENING!'))
+server.listen(3000, () => console.log('SERVER IS LISTENING!'))
 
 export {}

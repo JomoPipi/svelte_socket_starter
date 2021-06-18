@@ -28,8 +28,8 @@
 
 <main>
 	<div class="title">
-		<h1> BLOOD {name} </h1>
-		<h2> A Devastating Bloodbath of Boundless Mortality </h2>
+		<h1> Hello {name} </h1>
+		<h2> Get ready for the ultimate multiplayer interactive experience! </h2>
 	</div>
 	<div>
 		<span class="inner">

@@ -1,5 +1,5 @@
 
-(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 var app = (function () {
     'use strict';
 
@@ -390,11 +390,11 @@ var app = (function () {
     			main = element("main");
     			div0 = element("div");
     			h1 = element("h1");
-    			t0 = text("BLOOD ");
+    			t0 = text("Hello ");
     			t1 = text(/*name*/ ctx[0]);
     			t2 = space();
     			h2 = element("h2");
-    			h2.textContent = "A Devastating Bloodbath of Boundless Mortality";
+    			h2.textContent = "Get ready for the ultimate multiplayer interactive experience!";
     			t4 = space();
     			div1 = element("div");
     			span1 = element("span");
@@ -417,19 +417,19 @@ var app = (function () {
     			attr_dev(input, "placeholder", "Enter your name");
     			attr_dev(input, "pattern", "[A-Za-z0-9 _]*");
     			attr_dev(input, "class", "svelte-1ggq3y7");
-    			add_location(input, file, 26, 4, 653);
+    			add_location(input, file, 26, 4, 669);
     			attr_dev(button, "class", "svelte-1ggq3y7");
-    			add_location(button, file, 29, 4, 782);
+    			add_location(button, file, 29, 4, 798);
     			attr_dev(form, "type", "text");
     			attr_dev(form, "action", "");
-    			add_location(form, file, 25, 3, 591);
-    			add_location(span0, file, 31, 2, 819);
+    			add_location(form, file, 25, 3, 607);
+    			add_location(span0, file, 31, 2, 835);
     			attr_dev(span1, "class", "inner svelte-1ggq3y7");
-    			add_location(span1, file, 24, 2, 566);
+    			add_location(span1, file, 24, 2, 582);
     			attr_dev(div1, "class", "svelte-1ggq3y7");
-    			add_location(div1, file, 23, 1, 557);
+    			add_location(div1, file, 23, 1, 573);
     			attr_dev(bloodblaze, "class", "svelte-1ggq3y7");
-    			add_location(bloodblaze, file, 33, 1, 838);
+    			add_location(bloodblaze, file, 33, 1, 854);
     			attr_dev(main, "class", "svelte-1ggq3y7");
     			add_location(main, file, 18, 0, 429);
     		},
@@ -623,7 +623,7 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("App", slots, []);
     	let { name } = $$props;
-    	console.log("client poop ===", poop);
+    	console.log("client shared data ===", MySharedDataConstant);
     	const writable_props = ["name"];
 
     	Object.keys($$props).forEach(key => {
@@ -679,7 +679,7 @@ var app = (function () {
     const app = new App({
         target: document.body,
         props: {
-            name: 'Blaze'
+            name: 'World'
         }
     });
 
